@@ -1,4 +1,4 @@
-package com.jocajica.android.androidchat;
+package com.jocajica.android.androidchat.login;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -6,6 +6,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
+
+import com.jocajica.android.androidchat.R;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;

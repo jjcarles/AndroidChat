@@ -1,4 +1,4 @@
-package com.jocajica.android.androidchat;
+package com.jocajica.android.androidchat.domain;
 
 import com.firebase.client.AuthData;
 import com.firebase.client.DataSnapshot;
