@@ -8,7 +8,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:id="@+id/layoutMainContainer"
-    tools:context="com.jocajica.android.androidchat.LoginActivity">
+    tools:context="com.jocajica.android.androidchat.login.LoginActivity">
 
     <LinearLayout
         android:orientation="horizontal"
