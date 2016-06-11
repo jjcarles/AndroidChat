@@ -5,6 +5,7 @@ import com.firebase.client.DataSnapshot;
 import com.firebase.client.Firebase;
 import com.firebase.client.FirebaseError;
 import com.firebase.client.ValueEventListener;
+import com.jocajica.android.androidchat.entities.User;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -31,7 +32,7 @@ public class FirebaseHelper {
     }
 
     public FirebaseHelper() {
-
+        this.dataReference = new Firebase(FIREBASE_URL);
     }
 
     public Firebase getDataReference() {
@@ -101,7 +102,7 @@ public class FirebaseHelper {
     }
 
     public void signoff() {
-        notifyContactsConnectionChange(false, true);
+        notifyContactsConnectionChange(User.OFFLINE, true);
     }
 
     private void notifyContactsConnectionChange(final boolean online, final boolean signoff) {

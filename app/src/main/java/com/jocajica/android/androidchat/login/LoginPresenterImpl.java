@@ -4,6 +4,8 @@ import com.jocajica.android.androidchat.lib.EventBus;
 import com.jocajica.android.androidchat.lib.GreenRobotEventBus;
 import com.jocajica.android.androidchat.login.events.LoginEvent;
 
+import org.greenrobot.eventbus.Subscribe;
+
 /**
  * Created by Joan Carles Jiménez on 09/06/2016.
  */
@@ -88,6 +90,7 @@ public class LoginPresenterImpl implements LoginPresenter {
     }
 
     @Override
+    @Subscribe
     public void onEventMainThread(LoginEvent event) {
         switch (event.getEventType()) {
             case LoginEvent.onSignInSuccess:
