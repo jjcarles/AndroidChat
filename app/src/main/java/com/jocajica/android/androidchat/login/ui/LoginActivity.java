@@ -1,4 +1,4 @@
-package com.jocajica.android.androidchat.login;
+package com.jocajica.android.androidchat.login.ui;
 
 import android.content.Intent;
 import android.support.design.widget.Snackbar;
@@ -12,6 +12,9 @@ import android.widget.RelativeLayout;
 
 import com.jocajica.android.androidchat.R;
 import com.jocajica.android.androidchat.contactlist.ContactListActivity;
+import com.jocajica.android.androidchat.login.LoginPresenter;
+import com.jocajica.android.androidchat.login.LoginPresenterImpl;
+import com.jocajica.android.androidchat.login.ui.LoginView;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;

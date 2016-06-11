@@ -3,6 +3,7 @@ package com.jocajica.android.androidchat.login;
 import com.jocajica.android.androidchat.lib.EventBus;
 import com.jocajica.android.androidchat.lib.GreenRobotEventBus;
 import com.jocajica.android.androidchat.login.events.LoginEvent;
+import com.jocajica.android.androidchat.login.ui.LoginView;
 
 import org.greenrobot.eventbus.Subscribe;
 
@@ -48,7 +49,7 @@ public class LoginPresenterImpl implements LoginPresenter {
             loginView.showProgress();
         }
 
-        loginInteractor.doSignUp(email,password );
+        loginInteractor.doSignIn(email,password );
     }
 
     @Override

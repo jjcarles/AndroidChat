@@ -1,4 +1,4 @@
-package com.jocajica.android.androidchat.login;
+package com.jocajica.android.androidchat.login.ui;
 
 /**
  * Created by jcarles on 09/06/2016.
