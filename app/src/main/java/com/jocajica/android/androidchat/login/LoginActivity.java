@@ -17,6 +17,9 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
+// Ordre de crides
+// View -> Presenter -> Interactor -> Repository
+
 public class LoginActivity extends AppCompatActivity implements LoginView {
     @BindView(R.id.btnSignin)
     Button btnSigning;
