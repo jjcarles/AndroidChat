@@ -1,20 +1,32 @@
 package com.jocajica.android.androidchat.login;
 
+import com.jocajica.android.androidchat.lib.EventBus;
+import com.jocajica.android.androidchat.lib.GreenRobotEventBus;
+import com.jocajica.android.androidchat.login.events.LoginEvent;
+
 /**
  * Created by Joan Carles Jiménez on 09/06/2016.
  */
 public class LoginPresenterImpl implements LoginPresenter {
+    private EventBus eventBus;
     private LoginView loginView;
     private LoginInteractor loginInteractor;
 
     public LoginPresenterImpl(LoginView loginView) {
         this.loginView = loginView;
         this.loginInteractor = new LoginInteractorImpl();
+        this.eventBus = GreenRobotEventBus.getInstance();
+    }
+
+    @Override
+    public void onCreate() {
+        eventBus.register(this);
     }
 
     @Override
     public void onDestroy() {
         loginView = null;
+        eventBus.unregister(this);
     }
 
     @Override
@@ -75,4 +87,32 @@ public class LoginPresenterImpl implements LoginPresenter {
         }
     }
 
+    @Override
+    public void onEventMainThread(LoginEvent event) {
+        switch (event.getEventType()) {
+            case LoginEvent.onSignInSuccess:
+                onSignInSuccess();
+                break;
+            case LoginEvent.onSignUpSuccess:
+                onSignUpSuccess();
+                break;
+            case LoginEvent.onSignInError:
+                onSignInError(event.getErrorMessage());
+                break;
+            case LoginEvent.onSignUpError:
+                onSignUpError(event.getErrorMessage());
+                break;
+            case LoginEvent.onFailedToRecoverSession:
+                onFailedToRecoverSession();
+                break;
+        }
+    }
+
+    private void onFailedToRecoverSession() {
+        if (loginView != null) {
+            loginView.hideProgress();
+            loginView.enableInputs();
+        }
+
+    }
 }
