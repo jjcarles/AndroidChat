@@ -11,10 +11,9 @@ import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 
 import com.jocajica.android.androidchat.R;
-import com.jocajica.android.androidchat.contactlist.ContactListActivity;
+import com.jocajica.android.androidchat.contactlist.ui.ContactListActivity;
 import com.jocajica.android.androidchat.login.LoginPresenter;
 import com.jocajica.android.androidchat.login.LoginPresenterImpl;
-import com.jocajica.android.androidchat.login.ui.LoginView;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
