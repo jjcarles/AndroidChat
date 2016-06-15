@@ -12,6 +12,7 @@ import android.view.MenuItem;
 
 import com.bumptech.glide.Glide;
 import com.jocajica.android.androidchat.R;
+import com.jocajica.android.androidchat.addcontact.ui.AddContactFragment;
 import com.jocajica.android.androidchat.contactlist.ContactListPresenter;
 import com.jocajica.android.androidchat.contactlist.ContactListPresenterImpl;
 import com.jocajica.android.androidchat.contactlist.ui.adapter.ContactListAdapter;
@@ -108,7 +109,7 @@ public class ContactListActivity extends AppCompatActivity implements ContactLis
 
     @OnClick(R.id.fab)
     public void addContact() {
-
+        new AddContactFragment().show(getSupportFragmentManager(), getString(R.string.addcontact_message_title));
     }
 
     @Override
