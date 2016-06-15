@@ -33,12 +33,6 @@ public class ContactListAdapter extends RecyclerView.Adapter<ContactListAdapter.
         return new ViewHolder(view);
     }
 
-    public ContactListAdapter(List<User> contactList, ImageLoader imageLoader, OnItemClickListener onItemClickListener) {
-        this.contactList = contactList;
-        this.imageLoader = imageLoader;
-        this.onItemClickListener = onItemClickListener;
-    }
-
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
         User user = contactList.get(position);
@@ -56,9 +50,37 @@ public class ContactListAdapter extends RecyclerView.Adapter<ContactListAdapter.
         imageLoader.load(holder.imgAvatar, AvatarHelper.getAvatarUrl(email));
     }
 
+    public ContactListAdapter(List<User> contactList, ImageLoader imageLoader, OnItemClickListener onItemClickListener) {
+        this.contactList = contactList;
+        this.imageLoader = imageLoader;
+        this.onItemClickListener = onItemClickListener;
+    }
+
     @Override
     public int getItemCount() {
         return contactList.size();
+    }
+
+    public void add(User user) {
+        if (contactList.contains(user)) {
+            contactList.add(user);
+            notifyDataSetChanged();
+        }
+    }
+
+    public void update(User user) {
+        if (contactList.contains(user)) {
+            int index = contactList.indexOf(user);
+            contactList.set(index, user);
+            notifyDataSetChanged();
+        }
+    }
+
+    public void remove(User user) {
+        if (contactList.contains(user)) {
+            contactList.remove(user);
+            notifyDataSetChanged();
+        }
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
