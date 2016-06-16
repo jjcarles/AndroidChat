@@ -55,16 +55,6 @@ public class LoginActivity extends AppCompatActivity implements LoginView {
         super.onDestroy();
     }
 
-    @OnClick(R.id.btnSignin)
-    public void handleSigning() {
-
-    }
-
-    @OnClick(R.id.btnSignup)
-    public void handleSignup() {
-
-    }
-
     @Override
     public void enableInputs() {
         setInputs(true);

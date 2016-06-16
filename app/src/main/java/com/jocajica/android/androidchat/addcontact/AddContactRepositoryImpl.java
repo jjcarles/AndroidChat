@@ -64,7 +64,7 @@ public class AddContactRepositoryImpl implements AddContactRepository {
 
     private void post(boolean error) {
         AddContactEvent event = new AddContactEvent();
-        event.setError(true);
+        event.setError(error);
         eventBus.post(event);;
     }
 }

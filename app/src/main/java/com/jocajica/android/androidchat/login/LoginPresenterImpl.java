@@ -49,7 +49,7 @@ public class LoginPresenterImpl implements LoginPresenter {
             loginView.showProgress();
         }
 
-        loginInteractor.doSignIn(email,password );
+        loginInteractor.doSignIn(email, password);
     }
 
     @Override
